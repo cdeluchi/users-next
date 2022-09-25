@@ -7,19 +7,19 @@ export const getStaticProps = async () => {
   const data = await res.json();
 
   return {
-    props: { ninjas: data },
+    props: { links: data },
   };
 };
 
-const Ninjas = ({ ninjas }) => {
-  // console.log(ninjas);
+const Links = ({ links }) => {
+  // console.log(links);
   return (
     <div className="content">
       <h1>All users</h1>
-      {ninjas.map((ninja) => (
-        <Link href={"/ninjas/" + ninja.id} key={ninja.id}>
+      {links.map((link) => (
+        <Link href={"/links/" + link.id} key={link.id}>
           <a className={style.single}>
-            <h3>{ninja.name}</h3>
+            <h3>{link.name}</h3>
           </a>
         </Link>
       ))}
@@ -27,4 +27,4 @@ const Ninjas = ({ ninjas }) => {
   );
 };
 
-export default Ninjas;
+export default Links;

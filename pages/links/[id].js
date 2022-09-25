@@ -3,9 +3,9 @@ import React from "react";
 export const getStaticPaths = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
-  const paths = data.map((ninja) => {
+  const paths = data.map((link) => {
     return {
-      params: { id: ninja.id.toString() },
+      params: { id: link.id.toString() },
     };
   });
 
@@ -19,20 +19,19 @@ export const getStaticProps = async (context) => {
   const id = context.params.id;
   const res = await fetch("https://jsonplaceholder.typicode.com/users/" + id);
   const data = await res.json();
-  console.log(data);
 
   return {
-    props: { ninja: data },
+    props: { link: data },
   };
 };
 
-const Details = ({ ninja }) => {
+const Details = ({ link }) => {
   return (
     <div className="contentDetails">
-      <h1>{ninja.name}</h1>
-      <p>{ninja.email}</p>
-      <p>{ninja.website}</p>
-      <p>{ninja.address.city}</p>
+      <h1>{link.name}</h1>
+      <p>{link.email}</p>
+      <p>{link.website}</p>
+      <p>{link.address.city}</p>
     </div>
   );
 };

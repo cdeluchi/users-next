@@ -24,7 +24,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-nav {
+/* nav {
   max-width: 960px;
   margin: 10px auto 80px;
   padding: 10px 0;
@@ -38,7 +38,7 @@ nav a {
 }
 nav .logo {
   margin-right: auto;
-}
+} */
 
 footer {
   display: block;
