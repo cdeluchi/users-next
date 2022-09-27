@@ -1,15 +1,16 @@
 import React from "react";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import { createUseStyles } from "react-jss";
 
 const about = () => {
+  // const classes = useStyles({});
   return (
     <>
       <Head>
         <title>Next | About</title>
         <meta name="keywords" content="about" />
       </Head>
-      <div className="content">
+      <div className={classes.content}>
         <h1>About page</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -24,5 +25,11 @@ const about = () => {
     </>
   );
 };
+const useStyles = createUseStyles({
+  content: {
+    maxWidth: "960px",
+    margin: "0 auto",
+  },
+});
 
 export default about;

@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { createUseStyles } from "react-jss";
+import Home from "../pages";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
@@ -9,7 +10,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      {children}
+      <Home />
       <Footer />
     </div>
   );

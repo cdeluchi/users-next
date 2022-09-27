@@ -1,18 +1,19 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
+import { createUseStyles } from "react-jss";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const classes = useStyles({});
   return (
     <>
       <Head>
         <title>Next | Home</title>
         <meta name="keywords" content="about" />
       </Head>
-      <div className="content">
-        <h1 className={styles.title}>homepage</h1>
-        <p className={styles.text}>
+      <div className={classes.content}>
+        <h1 className={classes.title}>homepage</h1>
+        <p className={classes.text}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -21,7 +22,7 @@ export default function Home() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <p className={styles.text}>
+        <p className={classes.text}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -31,9 +32,27 @@ export default function Home() {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
         <Link href="/links">
-          <a className={styles.btn}>See the link</a>
+          <a className={classes.btn}>See the link</a>
         </Link>
       </div>
     </>
   );
 }
+
+const useStyles = createUseStyles({
+  content: {
+    maxWidth: "960px",
+    margin: "0 auto",
+  },
+  btn: {
+    display: "flex",
+    justifyContent: "center",
+    width: "150px",
+    padding: "8px 0",
+    margin: "20px auto",
+    background: "#4979ff",
+    borderRadius: "4px",
+    color: "red",
+    textAlign: "center",
+  },
+});

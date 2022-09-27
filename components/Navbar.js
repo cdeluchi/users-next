@@ -16,10 +16,10 @@ const Navbar = () => {
             <a className={classes.linkNav}>Home</a>
           </Link>
           <Link href="/about">
-            <a>About</a>
+            <a className={classes.linkNav}>About</a>
           </Link>
           <Link href="/links">
-            <a>Links</a>
+            <a className={classes.linkNav}>Links</a>
           </Link>
         </nav>
       </div>
@@ -29,8 +29,8 @@ const Navbar = () => {
 
 const useStyles = createUseStyles({
   wrapper: {
+    // background: "salmon",
     maxWidth: 960,
-    background: "red",
     margin: "10px auto 80px",
     padding: "10px 0",
     display: "flex",
@@ -45,11 +45,14 @@ const useStyles = createUseStyles({
   nav: {
     width: "30%",
     display: "flex",
+    // background: "red",
     justifyContent: "space-evenly",
     alignItems: "center",
   },
   linkNav: {
     margin: 12,
+    color: "#333",
+    textDecoration: "none",
   },
 });
 export default Navbar;
