@@ -10,17 +10,12 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <Home />
+      {children}
       <Footer />
     </div>
   );
 };
 
-const useStyle = createUseStyles({
-  wrapper: {
-    // maxWidth: 960,
-    // margin: "0 auto",
-  },
-});
+const useStyle = createUseStyles({});
 
 export default Layout;

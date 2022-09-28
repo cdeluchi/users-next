@@ -2,8 +2,8 @@ import React from "react";
 import Head from "next/head";
 import { createUseStyles } from "react-jss";
 
-const about = () => {
-  // const classes = useStyles({});
+const About = () => {
+  const classes = useStyles({});
   return (
     <>
       <Head>
@@ -32,4 +32,4 @@ const useStyles = createUseStyles({
   },
 });
 
-export default about;
+export default About;

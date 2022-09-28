@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import { SheetsRegistry, JssProvider, createGenerateId } from "react-jss";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { render } from "react-dom";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -9,18 +10,15 @@ class MyDocument extends Document {
     const originalRenderPage = ctx.renderPage;
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp:
-          (App) =>
-          ({ Component, pageProps }) =>
-            (
-              <JssProvider registry={registry} generateId={generateId}>
-                <Layout>
-                  <Component {...pageProps} />
-                </Layout>
-              </JssProvider>
-            ),
+        enhanceApp: (App) => (props) =>
+          (
+            <JssProvider registry={registry} generateId={generateId}>
+              <App {...props} />
+            </JssProvider>
+          ),
       });
-    const initialProps = await Document.getInitialProps(ctx); // this Document is not imported
+
+    const initialProps = await Document.getInitialProps(ctx);
     return {
       ...initialProps,
       styles: (
@@ -30,14 +28,14 @@ class MyDocument extends Document {
         </>
       ),
     };
+  }
+  render() {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="../styles/Home.modules.css" />
-          <link href="../styles/globals.css" rel="stylesheet" />
+          <link href="link to font" rel="../styles/globals.css" />
         </Head>
         <body>
-          <Layout />
           <Main />
           <NextScript />
         </body>

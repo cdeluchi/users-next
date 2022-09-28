@@ -9,14 +9,6 @@ body {
   font-family: Roboto;
 }
 
-a {
-  color: #333;
-  text-decoration: none;
-}
-.content {
-  max-width: 960px;
-  margin: 0 auto;
-}
 .contentDetails {
   max-width: 960px;
   margin: 0 auto;
@@ -24,21 +16,6 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-/* nav {
-  max-width: 960px;
-  margin: 10px auto 80px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  border-bottom: 1px solid #ddd;
-}
-nav a {
-  margin: 12px;
-}
-nav .logo {
-  margin-right: auto;
-} */
 
 .not-found {
   text-align: center;

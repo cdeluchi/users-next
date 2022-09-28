@@ -13,10 +13,9 @@ export const getStaticProps = async () => {
 };
 
 const Links = ({ links }) => {
-  // console.log(links);
   const classes = useStyles({});
   return (
-    <div className="content">
+    <div className={classes.content}>
       <h1>All users</h1>
       {links.map((link) => (
         <Link href={"/links/" + link.id} key={link.id}>
@@ -30,10 +29,16 @@ const Links = ({ links }) => {
 };
 
 const useStyles = createUseStyles({
+  content: {
+    maxWidth: "960px",
+    margin: "0 auto",
+  },
   single: {
     padding: "2px 16px",
-    background: "red",
+    background: "white",
+    boxShadow: "0 0.5px 1px 0 rgba(160, 160, 160, 0.4)",
     display: "block",
+    borderRadius: 5,
     margin: "20px 10px",
     borderLeft: "8px solid #fff",
     "&:hover": {

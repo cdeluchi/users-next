@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { createUseStyles } from "react-jss";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const classes = useStyles({});
@@ -41,6 +40,7 @@ export default function Home() {
 
 const useStyles = createUseStyles({
   content: {
+    // fontFamily: "roboto",
     maxWidth: "960px",
     margin: "0 auto",
   },
@@ -52,7 +52,7 @@ const useStyles = createUseStyles({
     margin: "20px auto",
     background: "#4979ff",
     borderRadius: "4px",
-    color: "red",
+    color: "white",
     textAlign: "center",
   },
 });
